@@ -1,0 +1,1727 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Bean Bliss Coffee Shop</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+    <!-- ================= CSS ================= -->
+
+    <style>
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #fffaf5;
+            color: #2b1a12;
+        }
+
+
+        /* ================= NAVBAR ================= */
+
+        .coffee-navbar {
+            background: rgba(35, 20, 12, 0.96);
+            backdrop-filter: blur(10px);
+            padding: 13px 0;
+        }
+
+        .navbar-brand {
+            font-size: 25px;
+        }
+
+        .navbar-brand i {
+            color: #d6a15c;
+        }
+
+        .nav-link {
+            color: white !important;
+            margin: 0 6px;
+            transition: .3s;
+        }
+
+        .nav-link:hover {
+            color: #d6a15c !important;
+        }
+
+
+        /* ================= BUTTON ================= */
+
+        .btn-coffee {
+            background: #b8753c;
+            color: white;
+            border: none;
+            padding: 11px 25px;
+            border-radius: 30px;
+            transition: .3s;
+        }
+
+        .btn-coffee:hover {
+            background: #8f5227;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 100vh;
+
+            background:
+                linear-gradient(
+                    rgba(25, 12, 5, .68),
+                    rgba(25, 12, 5, .68)
+                ),
+                url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1800&q=80");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            align-items: center;
+
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero-small {
+            color: #e4b875;
+            letter-spacing: 5px;
+            font-weight: bold;
+        }
+
+        .hero h1 {
+            font-size: clamp(48px, 8vw, 90px);
+            font-weight: 800;
+        }
+
+        .hero h1 span {
+            color: #d6a15c;
+        }
+
+        .hero p {
+            font-size: 19px;
+            line-height: 1.8;
+        }
+
+
+        /* ================= SECTION ================= */
+
+        section {
+            padding: 90px 0;
+        }
+
+        .section-title {
+            color: #b8753c;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .section-heading {
+            font-size: 48px;
+            font-weight: bold;
+        }
+
+
+        /* ================= ABOUT ================= */
+
+        .about-img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 25px;
+            transition: .5s;
+        }
+
+        .about-img:hover {
+            transform: scale(1.03);
+        }
+
+
+        /* ================= MISSION ================= */
+
+        .mission-section {
+            background: #f5eadf;
+        }
+
+        .mission-card {
+            background: white;
+            padding: 45px 30px;
+            border-radius: 22px;
+            height: 100%;
+            box-shadow: 0 10px 30px rgba(0,0,0,.1);
+            transition: .4s;
+        }
+
+        .mission-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .mission-card i {
+            font-size: 55px;
+            color: #b8753c;
+        }
+
+
+        /* ================= COFFEE CARDS ================= */
+
+        .coffee-section {
+            background: #fffaf5;
+        }
+
+        .coffee-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            height: 100%;
+            box-shadow: 0 10px 30px rgba(0,0,0,.1);
+            transition: .4s;
+        }
+
+        .coffee-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,.18);
+        }
+
+        .coffee-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .price {
+            color: #b8753c;
+            font-weight: bold;
+        }
+
+
+        /* ================= GALLERY ================= */
+
+        .gallery-section {
+            background: #f5eadf;
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 18px;
+            transition: .5s;
+        }
+
+        .gallery-box {
+            overflow: hidden;
+            border-radius: 18px;
+        }
+
+        .gallery-img:hover {
+            transform: scale(1.1);
+        }
+
+
+        /* ================= VIDEO ================= */
+
+        .video-box {
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,.15);
+        }
+
+        .video-box video {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+        }
+
+
+        /* ================= CONTACT ================= */
+
+        .contact-section {
+            background: #fffaf5;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 40px;
+            border-radius: 22px;
+            box-shadow: 0 10px 30px rgba(0,0,0,.1);
+        }
+
+        .contact-info {
+            background: #f5eadf;
+            padding: 35px;
+            border-radius: 22px;
+            height: 100%;
+        }
+
+        .contact-info i {
+            color: #b8753c;
+            font-size: 28px;
+        }
+
+        .form-control {
+            padding: 13px;
+            border-radius: 10px;
+        }
+
+        .map {
+            width: 100%;
+            height: 450px;
+            border: 0;
+            border-radius: 20px;
+        }
+
+
+        /* ================= LOGIN ================= */
+
+        .login-section {
+            background:
+                linear-gradient(
+                    rgba(30,15,8,.75),
+                    rgba(30,15,8,.75)
+                ),
+                url("https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1800&q=80");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .login-card {
+            background: rgba(255,255,255,.97);
+            padding: 45px;
+            border-radius: 25px;
+            box-shadow: 0 20px 50px rgba(0,0,0,.3);
+        }
+
+        .login-icon {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            background: #b8753c;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+            font-size: 35px;
+        }
+
+
+        /* ================= REGISTRATION ================= */
+
+        .registration-section {
+            background: #f5eadf;
+        }
+
+        .registration-box {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,.15);
+        }
+
+        .registration-image {
+            min-height: 650px;
+
+            background:
+                linear-gradient(
+                    rgba(30,15,8,.45),
+                    rgba(30,15,8,.45)
+                ),
+                url("https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=1000&q=80");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            align-items: end;
+
+            padding: 40px;
+            color: white;
+        }
+
+        .registration-image h2 {
+            font-size: 42px;
+            font-weight: bold;
+        }
+
+        .registration-form {
+            padding: 45px;
+        }
+
+
+        /* ================= CTA ================= */
+
+        .cta {
+            background:
+                linear-gradient(
+                    rgba(50,25,12,.85),
+                    rgba(50,25,12,.85)
+                ),
+                url("https://images.unsplash.com/photo-1511081692775-05d0f180a065?auto=format&fit=crop&w=1800&q=80");
+
+            background-size: cover;
+            background-position: center;
+
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 48px;
+            font-weight: bold;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #21140e;
+            color: #ddd;
+            padding: 55px 0 25px;
+        }
+
+        footer h4 {
+            color: white;
+        }
+
+        footer i {
+            color: #d6a15c;
+        }
+
+        .social-icons i {
+            color: white;
+            font-size: 25px;
+            margin: 8px;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .social-icons i:hover {
+            color: #d6a15c;
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media(max-width:768px) {
+
+            section {
+                padding: 65px 0;
+            }
+
+            .hero {
+                text-align: center;
+            }
+
+            .section-heading {
+                font-size: 38px;
+            }
+
+            .registration-image {
+                min-height: 400px;
+            }
+
+            .registration-form {
+                padding: 30px 20px;
+            }
+
+            .login-card {
+                padding: 30px 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ===================================================== -->
+<!-- NAVBAR -->
+<!-- ===================================================== -->
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top coffee-navbar">
+
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="#home">
+            <i class="bi bi-cup-hot-fill"></i>
+            Bean Bliss
+        </a>
+
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarMenu">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+        <div class="collapse navbar-collapse" id="navbarMenu">
+
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">
+                        Home
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">
+                        About Us
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#gallery">
+                        Gallery
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">
+                        Contact Us
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#login">
+                        Login
+                    </a>
+                </li>
+
+                <li class="nav-item ms-lg-2">
+                    <a class="btn btn-coffee"
+                       href="#registration">
+                        Register
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<!-- ===================================================== -->
+<!-- HOME -->
+<!-- ===================================================== -->
+
+<section class="hero" id="home">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <span class="hero-small">
+                WELCOME TO BEAN BLISS
+            </span>
+
+            <h1 class="mt-3">
+                Every Cup Has
+                <span>A Story</span>
+            </h1>
+
+            <p class="mt-3">
+                Freshly roasted coffee, delicious flavors and
+                unforgettable moments. Relax, sip and enjoy
+                the perfect cup of coffee.
+            </p>
+
+            <div class="mt-4">
+
+                <a href="#about"
+                   class="btn btn-coffee btn-lg me-2">
+                    Discover More
+                </a>
+
+                <a href="#contact"
+                   class="btn btn-outline-light btn-lg">
+                    Visit Us
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ===================================================== -->
+<!-- ABOUT US -->
+<!-- ===================================================== -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="row align-items-center g-5">
+
+            <div class="col-lg-6">
+
+                <img
+                    src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=1000&q=80"
+                    class="about-img"
+                    alt="Coffee Shop">
+
+            </div>
+
+
+            <div class="col-lg-6">
+
+                <span class="section-title">
+                    ABOUT US
+                </span>
+
+                <h2 class="section-heading mt-2">
+                    More Than Just Coffee
+                </h2>
+
+                <p class="mt-3">
+                    Bean Bliss is a cozy coffee shop created for
+                    people who love great coffee, warm conversations
+                    and beautiful moments.
+                </p>
+
+                <p>
+                    We carefully select premium coffee beans and
+                    prepare every cup with passion and attention
+                    to detail.
+                </p>
+
+                <p>
+                    Whether you are meeting friends, working,
+                    studying or simply relaxing, Bean Bliss is
+                    your perfect coffee destination.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ===================================================== -->
+<!-- MISSION & VISION -->
+<!-- ===================================================== -->
+
+<section class="mission-section">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="section-title">
+                WHAT WE BELIEVE
+            </span>
+
+            <h2 class="section-heading mt-2">
+                Mission & Vision
+            </h2>
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <!-- MISSION -->
+
+            <div class="col-md-6">
+
+                <div class="mission-card text-center">
+
+                    <i class="bi bi-bullseye"></i>
+
+                    <h3 class="mt-3">
+                        Our Mission
+                    </h3>
+
+                    <p>
+                        Our mission is to serve delicious,
+                        freshly prepared coffee while creating
+                        a welcoming environment where everyone
+                        feels comfortable.
+                    </p>
+
+                    <p>
+                        We focus on premium ingredients,
+                        friendly service and memorable
+                        customer experiences.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- VISION -->
+
+            <div class="col-md-6">
+
+                <div class="mission-card text-center">
+
+                    <i class="bi bi-eye-fill"></i>
+
+                    <h3 class="mt-3">
+                        Our Vision
+                    </h3>
+
+                    <p>
+                        Our vision is to become a favorite
+                        coffee destination where great coffee,
+                        creativity and community come together.
+                    </p>
+
+                    <p>
+                        We want every guest to leave with a
+                        smile and a reason to come back.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ===================================================== -->
+<!-- COFFEE SPECIALS -->
+<!-- ===================================================== -->
+
+<section class="coffee-section">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="section-title">
+                OUR SPECIALS
+            </span>
+
+            <h2 class="section-heading mt-2">
+                Popular Coffee
+            </h2>
+
+            <p>
+                Crafted with passion, served with love.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <div class="col-md-4">
+
+                <div class="coffee-card">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=800&q=80"
+                        alt="Cappuccino">
+
+                    <div class="p-4">
+
+                        <h4>
+                            Cappuccino
+                        </h4>
+
+                        <p>
+                            Smooth espresso with creamy
+                            milk foam and a rich aroma.
+                        </p>
+
+                        <h5 class="price">
+                            ₹180
+                        </h5>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="coffee-card">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1561882468-9110e03e0f78?auto=format&fit=crop&w=800&q=80"
+                        alt="Latte">
+
+                    <div class="p-4">
+
+                        <h4>
+                            Classic Latte
+                        </h4>
+
+                        <p>
+                            A silky combination of espresso
+                            and perfectly steamed milk.
+                        </p>
+
+                        <h5 class="price">
+                            ₹200
+                        </h5>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="coffee-card">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1578314675249-a6910f80cc4e?auto=format&fit=crop&w=800&q=80"
+                        alt="Mocha">
+
+                    <div class="p-4">
+
+                        <h4>
+                            Chocolate Mocha
+                        </h4>
+
+                        <p>
+                            Rich chocolate, espresso and
+                            creamy milk in one delicious cup.
+                        </p>
+
+                        <h5 class="price">
+                            ₹220
+                        </h5>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ===================================================== -->
+<!-- GALLERY -->
+<!-- ===================================================== -->
+
+<section class="gallery-section" id="gallery">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="section-title">
+                COFFEE MOMENTS
+            </span>
+
+            <h2 class="section-heading mt-2">
+                Photo Gallery
+            </h2>
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <div class="col-md-4">
+
+                <div class="gallery-box">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80"
+                        class="gallery-img"
+                        alt="Coffee">
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="gallery-box">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=800&q=80"
+                        class="gallery-img"
+                        alt="Cafe">
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="gallery-box">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=800&q=80"
+                        class="gallery-img"
+                        alt="Coffee Shop">
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="gallery-box">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1497515114629-f71d768fd07c?auto=format&fit=crop&w=800&q=80"
+                        class="gallery-img"
+                        alt="Coffee Beans">
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="gallery-box">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1459755486867-b55449bb39ff?auto=format&fit=crop&w=800&q=80"
+                        class="gallery-img"
+                        alt="Coffee Cup">
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="gallery-box">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1511081692775-05d0f180a065?auto=format&fit=crop&w=800&q=80"
+                        class="gallery-img"
+                        alt="Cafe Interior">
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- VIDEOS -->
+
+        <div class="text-center mt-5 mb-4">
+
+            <span class="section-title">
+                WATCH OUR STORY
+            </span>
+
+            <h2 class="section-heading mt-2">
+                Coffee Videos
+            </h2>
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <div class="col-md-6">
+
+                <div class="video-box">
+
+                    <video controls
+                           poster="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1000&q=80">
+
+                        <source
+                            src="https://cdn.coverr.co/videos/coverr-a-cup-of-coffee-1576/1080p.mp4"
+                            type="video/mp4">
+
+                    </video>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6">
+
+                <div class="video-box">
+
+                    <video controls
+                           poster="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1000&q=80">
+
+                        <source
+                            src="https://cdn.coverr.co/videos/coverr-making-coffee-1573/1080p.mp4"
+                            type="video/mp4">
+
+                    </video>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ===================================================== -->
+<!-- CONTACT -->
+<!-- ===================================================== -->
+
+<section class="contact-section" id="contact">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="section-title">
+                GET IN TOUCH
+            </span>
+
+            <h2 class="section-heading mt-2">
+                Contact Us
+            </h2>
+
+        </div>
+
+
+        <div class="row g-5">
+
+
+            <!-- CONTACT INFO -->
+
+            <div class="col-lg-5">
+
+                <div class="contact-info">
+
+                    <h3 class="fw-bold">
+                        Let's Talk Coffee
+                    </h3>
+
+                    <p>
+                        Have a question or suggestion?
+                        We would love to hear from you.
+                    </p>
+
+
+                    <div class="d-flex gap-3 mt-4">
+
+                        <i class="bi bi-geo-alt-fill"></i>
+
+                        <div>
+
+                            <h5>Address</h5>
+
+                            <p>
+                                123 Coffee Street,<br>
+                                New Delhi, India
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="d-flex gap-3 mt-4">
+
+                        <i class="bi bi-telephone-fill"></i>
+
+                        <div>
+
+                            <h5>Phone</h5>
+
+                            <p>
+                                +91 98765 43210
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="d-flex gap-3 mt-4">
+
+                        <i class="bi bi-envelope-fill"></i>
+
+                        <div>
+
+                            <h5>Email</h5>
+
+                            <p>
+                                hello@beanbliss.com
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FORM -->
+
+            <div class="col-lg-7">
+
+                <div class="contact-card">
+
+                    <h3 class="fw-bold mb-4">
+                        Send Us a Message
+                    </h3>
+
+                    <form>
+
+                        <div class="row g-3">
+
+
+                            <div class="col-md-6">
+
+                                <label class="form-label">
+                                    Name
+                                </label>
+
+                                <input type="text"
+                                       class="form-control"
+                                       placeholder="Your name"
+                                       required>
+
+                            </div>
+
+
+                            <div class="col-md-6">
+
+                                <label class="form-label">
+                                    Email
+                                </label>
+
+                                <input type="email"
+                                       class="form-control"
+                                       placeholder="Your email"
+                                       required>
+
+                            </div>
+
+
+                            <div class="col-12">
+
+                                <label class="form-label">
+                                    Subject
+                                </label>
+
+                                <input type="text"
+                                       class="form-control"
+                                       placeholder="Subject">
+
+                            </div>
+
+
+                            <div class="col-12">
+
+                                <label class="form-label">
+                                    Message
+                                </label>
+
+                                <textarea
+                                    class="form-control"
+                                    rows="5"
+                                    placeholder="Your message..."
+                                    required></textarea>
+
+                            </div>
+
+
+                            <div class="col-12">
+
+                                <button
+                                    class="btn btn-coffee btn-lg">
+
+                                    Send Message
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- GOOGLE MAP -->
+
+        <div class="mt-5">
+
+            <h3 class="text-center fw-bold mb-4">
+                Find Our Coffee Shop
+            </h3>
+
+            <iframe
+                class="map"
+                src="https://www.google.com/maps?q=Connaught%20Place%20New%20Delhi&output=embed"
+                loading="lazy">
+            </iframe>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ===================================================== -->
+<!-- LOGIN -->
+<!-- ===================================================== -->
+
+<section class="login-section" id="login">
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <div class="col-md-6 col-lg-5">
+
+                <div class="login-card">
+
+                    <div class="text-center">
+
+                        <div class="login-icon">
+
+                            <i class="bi bi-person-fill"></i>
+
+                        </div>
+
+                        <h2 class="fw-bold mt-3">
+                            Welcome Back!
+                        </h2>
+
+                        <p class="text-muted">
+                            Login to your Bean Bliss account.
+                        </p>
+
+                    </div>
+
+
+                    <form class="mt-4">
+
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                class="form-control"
+                                placeholder="Enter your email"
+                                required>
+
+                        </div>
+
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Password
+                            </label>
+
+                            <input
+                                type="password"
+                                class="form-control"
+                                placeholder="Enter your password"
+                                required>
+
+                        </div>
+
+
+                        <div class="d-flex justify-content-between mb-4">
+
+                            <div>
+
+                                <input type="checkbox">
+
+                                Remember me
+
+                            </div>
+
+                            <a href="#">
+                                Forgot Password?
+                            </a>
+
+                        </div>
+
+
+                        <button
+                            class="btn btn-coffee btn-lg w-100">
+
+                            Login
+
+                        </button>
+
+
+                        <p class="text-center mt-4">
+
+                            Don't have an account?
+
+                            <a href="#registration">
+                                Register Now
+                            </a>
+
+                        </p>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ===================================================== -->
+<!-- REGISTRATION -->
+<!-- ===================================================== -->
+
+<section class="registration-section"
+         id="registration">
+
+    <div class="container">
+
+        <div class="registration-box">
+
+            <div class="row g-0">
+
+
+                <!-- LEFT IMAGE -->
+
+                <div class="col-lg-5">
+
+                    <div class="registration-image">
+
+                        <div>
+
+                            <span class="hero-small">
+                                JOIN BEAN BLISS
+                            </span>
+
+                            <h2 class="mt-3">
+                                Become Part of Our Coffee Family
+                            </h2>
+
+                            <p>
+                                Create your account and enjoy
+                                the Bean Bliss experience.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RIGHT FORM -->
+
+                <div class="col-lg-7">
+
+                    <div class="registration-form">
+
+                        <h2 class="fw-bold">
+                            Create Account
+                        </h2>
+
+                        <p class="text-muted">
+                            Register now and join our community.
+                        </p>
+
+
+                        <form class="mt-4">
+
+                            <div class="row g-3">
+
+
+                                <div class="col-md-6">
+
+                                    <label class="form-label">
+                                        First Name
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        placeholder="First name"
+                                        required>
+
+                                </div>
+
+
+                                <div class="col-md-6">
+
+                                    <label class="form-label">
+                                        Last Name
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        placeholder="Last name"
+                                        required>
+
+                                </div>
+
+
+                                <div class="col-12">
+
+                                    <label class="form-label">
+                                        Email Address
+                                    </label>
+
+                                    <input
+                                        type="email"
+                                        class="form-control"
+                                        placeholder="Enter email"
+                                        required>
+
+                                </div>
+
+
+                                <div class="col-md-6">
+
+                                    <label class="form-label">
+                                        Phone Number
+                                    </label>
+
+                                    <input
+                                        type="tel"
+                                        class="form-control"
+                                        placeholder="Phone number"
+                                        required>
+
+                                </div>
+
+
+                                <div class="col-md-6">
+
+                                    <label class="form-label">
+                                        Gender
+                                    </label>
+
+                                    <select class="form-select">
+
+                                        <option>
+                                            Select Gender
+                                        </option>
+
+                                        <option>
+                                            Male
+                                        </option>
+
+                                        <option>
+                                            Female
+                                        </option>
+
+                                        <option>
+                                            Other
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+
+                                <div class="col-12">
+
+                                    <label class="form-label">
+                                        Password
+                                    </label>
+
+                                    <input
+                                        type="password"
+                                        class="form-control"
+                                        placeholder="Create password"
+                                        required>
+
+                                </div>
+
+
+                                <div class="col-12">
+
+                                    <label class="form-label">
+                                        Confirm Password
+                                    </label>
+
+                                    <input
+                                        type="password"
+                                        class="form-control"
+                                        placeholder="Confirm password"
+                                        required>
+
+                                </div>
+
+
+                                <div class="col-12">
+
+                                    <div class="form-check">
+
+                                        <input
+                                            class="form-check-input"
+                                            type="checkbox"
+                                            required>
+
+                                        <label class="form-check-label">
+
+                                            I agree to the
+                                            <a href="#">
+                                                Terms & Conditions
+                                            </a>
+
+                                        </label>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="col-12">
+
+                                    <button
+                                        class="btn btn-coffee btn-lg w-100">
+
+                                        Create Account
+
+                                    </button>
+
+                                </div>
+
+
+                            </div>
+
+                        </form>
+
+
+                        <p class="text-center mt-4">
+
+                            Already have an account?
+
+                            <a href="#login">
+                                Login Here
+                            </a>
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ===================================================== -->
+<!-- CTA -->
+<!-- ===================================================== -->
+
+<section class="cta">
+
+    <div class="container">
+
+        <h2>
+            Your Perfect Coffee Is Waiting
+        </h2>
+
+        <p class="lead">
+            Come in, take a seat and enjoy the Bean Bliss experience.
+        </p>
+
+        <a href="#contact"
+           class="btn btn-light btn-lg mt-3">
+
+            Visit Us
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- ===================================================== -->
+<!-- FOOTER -->
+<!-- ===================================================== -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="row g-4">
+
+
+            <div class="col-md-4">
+
+                <h4>
+                    <i class="bi bi-cup-hot-fill"></i>
+                    Bean Bliss
+                </h4>
+
+                <p>
+                    Brewing happiness, one cup at a time.
+                </p>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <h5>
+                    Quick Links
+                </h5>
+
+                <a href="#home"
+                   class="text-white text-decoration-none d-block mb-2">
+                    Home
+                </a>
+
+                <a href="#about"
+                   class="text-white text-decoration-none d-block mb-2">
+                    About Us
+                </a>
+
+                <a href="#gallery"
+                   class="text-white text-decoration-none d-block mb-2">
+                    Gallery
+                </a>
+
+                <a href="#contact"
+                   class="text-white text-decoration-none d-block mb-2">
+                    Contact Us
+                </a>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <h5>
+                    Follow Us
+                </h5>
+
+                <div class="social-icons">
+
+                    <i class="bi bi-facebook"></i>
+
+                    <i class="bi bi-instagram"></i>
+
+                    <i class="bi bi-twitter"></i>
+
+                    <i class="bi bi-youtube"></i>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <hr>
+
+        <p class="text-center mb-0">
+
+            © 2026 Bean Bliss Coffee Shop.
+            All Rights Reserved.
+
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<!-- Bootstrap JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
+```
